@@ -84,3 +84,34 @@ h5,
 h6 {
   margin-bottom: var(--space-md);
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+  transition: background-color 0.2s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-text-secondary) !important;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+  opacity: 1;
+}

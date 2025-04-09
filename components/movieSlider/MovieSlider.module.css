@@ -1,0 +1,31 @@
+.sliderSection {
+  margin-bottom: var(--space-xxl);
+}
+
+.sliderTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-primary);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-md);
+}
+
+.swiperContainer {
+  padding-bottom: 40px;
+}
+
+.swiperSlide {
+  height: auto;
+}
+
+.loading,
+.error {
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--color-text-secondary);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
