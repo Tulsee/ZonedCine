@@ -31,6 +31,14 @@ const MovieDetailsPage = () => {
   const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "N/A";
   const cast = movie.credits?.cast?.slice(0, 12) || [];
 
+  const officialTrailer =
+    movie.videos?.results?.find(
+      (video) => video.site === "YouTube" && (video.type === "Trailer" || video.type === "Teaser") && video.official
+    ) ||
+    movie.videos?.results?.find(
+      (video) => video.site === "YouTube" && (video.type === "Trailer" || video.type === "Teaser")
+    );
+
   return (
     <div className={styles.detailsPage}>
       {backdropUrl && (
@@ -92,6 +100,20 @@ const MovieDetailsPage = () => {
                     <p className={styles.castCharacter}>{actor.character}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+          {officialTrailer && (
+            <div className={styles.trailerSection}>
+              <h2>Trailer</h2>
+              <div className={styles.videoResponsive}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${officialTrailer.key}`}
+                  title={`${movie.title} Trailer`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           )}

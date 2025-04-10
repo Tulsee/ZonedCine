@@ -30,7 +30,7 @@ export const tmdbApi = createApi({
     }),
 
     getMovieDetails: builder.query({
-      query: (id) => `movie/${id}?api_key=${tmdbApiKey}&language=en-US&append_to_response=credits`,
+      query: (id) => `movie/${id}?api_key=${tmdbApiKey}&language=en-US&append_to_response=credits,videos`,
     }),
   }),
 });

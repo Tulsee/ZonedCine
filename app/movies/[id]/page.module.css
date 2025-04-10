@@ -207,3 +207,33 @@
     font-size: 3.5rem;
   }
 }
+
+.trailerSection {
+  margin-top: var(--space-xl);
+}
+
+.trailerSection h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--space-sm);
+  display: inline-block;
+}
+
+.videoResponsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.videoResponsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 0;
+}
