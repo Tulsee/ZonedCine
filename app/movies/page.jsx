@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 import FilterSidebar from "@/components/filterSidebar/FilterSidebar";
@@ -11,7 +11,7 @@ import styles from "./page.module.css";
 
 import { useGetGenresQuery, useGetMoviesQuery } from "@/store/api/tmdbApi";
 
-const MoviesPage = () => {
+const MoviesPageContent = () => {
   const searchParams = useSearchParams();
 
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1"));
@@ -107,6 +107,14 @@ const MoviesPage = () => {
         <Pagination currentPage={currentPage} totalPages={maxPages} onPageChange={handlePageChange} />
       </div>
     </div>
+  );
+};
+
+const MoviesPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MoviesPageContent />
+    </Suspense>
   );
 };
 
