@@ -1,0 +1,209 @@
+.detailsPage {
+  color: var(--color-text-primary);
+}
+
+.loading,
+.error {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.backdropContainer {
+  position: relative;
+  height: 50vh; /* Adjust height */
+  width: 100%;
+  margin-bottom: calc(-1 * var(--space-xxl) * 2); /* Pull content up over backdrop */
+  overflow: hidden;
+}
+
+.backdropImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* Focus on top part */
+}
+
+.backdropOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-background) 15%,
+    rgba(16, 16, 16, 0.7) 50%,
+    rgba(16, 16, 16, 0.3) 100%
+  );
+}
+
+.mainContent {
+  position: relative; /* To sit above the backdrop gradient */
+  display: flex;
+  flex-direction: column; /* Stack poster/info on small screens */
+  padding: 0 var(--space-lg); /* Use main layout padding */
+  max-width: 1200px;
+  margin: 0 auto; /* Center content */
+  gap: var(--space-xl);
+}
+
+.posterContainer {
+  flex-shrink: 0; /* Don't shrink poster */
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Max width on larger screens */
+  align-self: center; /* Center on small screens */
+  margin-top: var(--space-xxl); /* Spacing from top after pull-up */
+}
+
+.posterImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid var(--color-surface);
+}
+
+.infoContainer {
+  flex-grow: 1;
+  padding-top: var(--space-xxl); /* Align top with poster roughly */
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: var(--space-xs);
+}
+
+.releaseYear {
+  font-weight: normal;
+  color: var(--color-text-secondary);
+  font-size: 1.8rem; /* Slightly smaller */
+  margin-left: var(--space-sm);
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  font-size: 1.1rem;
+}
+
+.metaInfo {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-secondary);
+  align-items: center;
+}
+
+.metaInfo span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.metaInfo svg {
+  color: var(--color-primary); /* Icon color */
+}
+
+.genres {
+  margin-bottom: var(--space-lg);
+}
+.genres strong {
+  margin-right: var(--space-sm);
+}
+
+.overview h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--space-sm);
+  display: inline-block;
+}
+
+.overview p {
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.tagline {
+  margin-top: 8px;
+}
+
+.tagline h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+  color: white;
+}
+
+.tagline p {
+  line-height: 1.7;
+  color: white;
+  font-style: italic;
+}
+
+.castSection {
+  margin-top: var(--space-xl);
+}
+
+.castSection h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--space-sm);
+  display: inline-block;
+}
+
+.castGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--space-lg);
+}
+
+.castMember {
+  text-align: center;
+}
+
+.castImage {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto var(--space-sm) auto;
+  object-fit: cover;
+  aspect-ratio: 2/3;
+  background-color: var(--color-surface);
+}
+
+.castName {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.castCharacter {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .posterContainer {
+    align-self: flex-start;
+    margin-top: var(--space-xxl);
+  }
+
+  .infoContainer {
+    margin-top: var(--space-xxl);
+    padding-top: 0;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+}
