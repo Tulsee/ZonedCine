@@ -166,6 +166,9 @@
 
 .castMember {
   text-align: center;
+  border: 2px solid var(--color-surface);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .castImage {
