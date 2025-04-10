@@ -19,10 +19,13 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.navLeft}>
         <Link href="/" className={styles.logo}>
-          Browse
+          ZonedCine
         </Link>
       </div>
       <div className={styles.navRight}>
+        <Link href="/movies" className={styles.discover}>
+          Discover Movies
+        </Link>
         <form onSubmit={handleSearch} className={styles.searchForm}>
           <input
             type="search"

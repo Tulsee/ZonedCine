@@ -5,10 +5,10 @@ import styles from "./MovieCard.module.css";
 const MovieCard = ({ movie }) => {
   const imageUrl = movie.poster_path
     ? `${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}w342${movie.poster_path}`
-    : "/placeholder-image.png";
+    : "/placeholder.jpg";
 
   return (
-    <Link href={`/movie/${movie.id}`} className={styles.card}>
+    <Link href={`/movies/${movie.id}`} className={styles.card}>
       <div className={styles.imageWrapper}>
         <img src={imageUrl} alt={movie.title} className={styles.image} loading="lazy" />
       </div>

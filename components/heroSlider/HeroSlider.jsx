@@ -49,7 +49,7 @@ const HeroSlider = () => {
               <div className={styles.textContent}>
                 <h2 className={styles.movieTitle}>{movie.title}</h2>
                 <p className={styles.movieOverview}>{movie.overview}</p>
-                <Link href={`/movie/${movie.id}`} className={styles.detailsButton}>
+                <Link href={`/movies/${movie.id}`} className={styles.detailsButton}>
                   View Details
                 </Link>
               </div>
