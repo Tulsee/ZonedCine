@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**zoned_cine - NextJS Movie Database App**
 
-## Getting Started
+This is a web application built with Next.js (React) that allows users to discover movies using the TMDb API. Users can browse upcoming and top-rated movies, view detailed information, filter by genre, sort results, and search for specific titles.
 
-First, run the development server:
+**Features:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Homepage:** Hero slider showing Now Playing movies, plus sliders for Upcoming and Top Rated movies.
+- **Movie Discovery:** Browse movies with genre filters, sorting options (popularity, release date, rating), and pagination.
+- **Search:** Use the navigation bar to search for specific movie titles.
+- **Movie Details:** View detailed information such as synopsis, cast, trailer, rating, runtime, and release date.
+- **Custom Design:** Unique dark theme with a custom color palette, no external UI libraries.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Tech Stack:**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Framework:** Next.js (App Router)
+- **Language:** JavaScript (React)
+- **State Management & Data Fetching:** Redux Toolkit with RTK Query
+- **API:** TMDb API v3
+- **Styling:** Custom CSS Modules
+- **Sliders:** Swiper.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Getting Started:**
 
-## Learn More
+1. **Clone the repository:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```
+   git clone https://github.com/Tulsee/zoned_cine
+   cd zoned_cine
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
+   npm install
+   ```
 
-## Deploy on Vercel
+   or
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```
+   yarn install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Set up environment variables:**
+
+   - Create a `.env.local` file in the root of the project.
+   - Add the following:
+     ```
+     NEXT_PUBLIC_TMDB_API_KEY=YOUR_TMDB_API_KEY_HERE
+     NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
+     NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/
+     ```
+
+4. **Run the development server:**
+   ```
+   npm run dev
+   ```
+   or
+   ```
+   yarn dev
+   ```
+   Then open `http://localhost:3000` in your browser.
+
+**Links:**
+
+- **Live Demo:** [Link](https://zoned-cine.vercel.app/)
